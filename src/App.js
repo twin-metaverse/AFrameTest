@@ -21,13 +21,12 @@ function App() {
       <a-assets>
         <img id="sky" src={meta} alt="background" />
         <img id="home" src={home} alt="home" />
+        <a-asset-item
+          id="glbtestmodel"
+          src="https://thinkuldeep.com/modelviewer/Astronaut.glb"
+        ></a-asset-item>
       </a-assets>
-      {/* <a-entity
-        link="href: https://j99120701.github.io/Profile/; title: My Homepage; image: #home"
-        position="0 0 0"
-      ></a-entity> */}
-      {/* <a-box navigate-on-click="url: http://google.com"></a-box> */}
-      {/* <a-entity camera="" look-controls cursor="rayOrigin: mouse"></a-entity> */}
+
       <Gem x={0} y={2} z={-10} />
 
       <a-entity id="mountain" position="0 -10 0" scale="15 15 15"></a-entity>
@@ -69,30 +68,14 @@ function App() {
         title="HTTP Example website"
         image="#home"
       ></a-link>
-      <a-entity>
-        <a-sphere
-          position="-10 2 -10"
-          radius="0.3"
-          material="src: #lobby-orbicon; repeat: 1 1; roughness: 2;"
-          color="#ffffff"
-          opacity="1"
-          href="https://j99120701.github.io/Profile/"
-        >
-          {/* <a-link
-            href="https://j99120701.github.io/Profile/"
-            title="My Homepage"
-            image="#home"
-          ></a-link> */}
-        </a-sphere>
-        <a-box
-          id="shadow"
-          position="-10 1 -10"
-          color="#000"
-          opacity="1"
-          rotation="0 0 0"
-          scale="0.4 1 0.4"
-        ></a-box>
-      </a-entity>
+      <a-entity
+        loading="lazy"
+        id="glbtest"
+        gltf-model="#glbtestmodel"
+        position="20 -5 -20"
+        scale="10 10 10"
+      ></a-entity>
+
       <a-sky color="#FFC65D" material="src:#sky" rotation="0 0 0"></a-sky>
     </a-scene>
   );
