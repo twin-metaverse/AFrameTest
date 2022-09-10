@@ -1,20 +1,16 @@
 import "aframe";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import gem1 from "../models/gem1.glb";
+import gem from "../models/gem.glb";
 import Prototypes from "prop-types";
 
 function Gem({ x, y, z }) {
   const loader = new GLTFLoader();
-  loader.load(gem1, (d) => {
-    const entity = document.getElementById("gem1");
+  loader.load(gem, (d) => {
+    const entity = document.getElementById("gem");
     entity.object3D.add(d.scene);
   });
   return (
-    <a-entity
-      id="gem1"
-      position={`${x} ${y} ${z}`}
-      scale="0.1 0.1 0.1"
-    ></a-entity>
+    <a-entity id="gem" position={`${x} ${y} ${z}`} scale="3 3 3"></a-entity>
   );
 }
 Gem.Prototypes = {

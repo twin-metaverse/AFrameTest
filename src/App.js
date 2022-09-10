@@ -7,6 +7,9 @@ import meta from "./assets/bg.jpg";
 import home from "./assets/home.png";
 import mountain from "./models/mountain.glb";
 import Gem from "./gem-js/Gem.js";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import RemoteGem from "./gem-js/remoteGem";
 
 function App() {
   const loader = new GLTFLoader();
@@ -29,6 +32,14 @@ function App() {
       {/* <a-box navigate-on-click="url: http://google.com"></a-box> */}
       {/* <a-entity camera="" look-controls cursor="rayOrigin: mouse"></a-entity> */}
       <Gem x={0} y={2} z={-10} />
+      {/* <RemoteGem x={10} y={2} z={-10} /> */}
+
+      <Suspense>
+        <Canvas>
+          <ambientLight />
+          <RemoteGem x={10} y={2} z={-10} />
+        </Canvas>
+      </Suspense>
 
       <a-entity id="mountain" position="0 -10 0" scale="15 15 15"></a-entity>
       <a-entity>
@@ -95,6 +106,15 @@ function App() {
       </a-entity>
       <a-sky color="#FFC65D" material="src:#sky" rotation="0 0 0"></a-sky>
     </a-scene>
+
+    // <a-scene>
+    //   <Suspense>
+    //     <Canvas>
+    //       <ambientLight />
+    //       <RemoteGem x={10} y={2} z={-10} />
+    //     </Canvas>
+    //   </Suspense>
+    // </a-scene>
   );
 }
 
