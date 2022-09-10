@@ -9,7 +9,8 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [https://localhost:3000](https://localhost:3000) to view it in your browser.
+如果沒有要走 https，可以到 package.json 把 script > start > `HTTPS=true` 拿掉走 http => [http://localhost:3000](http://localhost:3000)
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
