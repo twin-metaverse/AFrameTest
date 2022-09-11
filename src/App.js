@@ -64,7 +64,7 @@ function App() {
       </a-entity>
       <a-link
         position="-20 2 -10"
-        href="https://example.com/"
+        href="http://speed.hinet.net/httptest.html"
         title="HTTP Example website"
         image="#home"
       ></a-link>
